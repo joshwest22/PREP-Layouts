@@ -1,0 +1,36 @@
+<html>
+<head><link rel="stylesheet" type="text/css" href=stylesheet.css></head>
+<body>
+<h1>Layouts &amp; Their Common Algorithm</h1>
+    <div>
+    <h3>D3 Layouts</h3>    
+        <ul>
+            <li>Chord</li>
+            <li>Cluster</li>
+            <li>Force</li>
+            <li>Pack</li>
+            <li>Partition</li>
+            <li>Pie</li>
+            <li>Stack</li>
+            <li>Tree</li>
+            <li>Treemap</li>
+        </ul>
+    </div>
+    <div id="commonalities">
+        Before you visualize anything, you should start by creating an svg. Generally, you make each visualization by starting with d3.nameOfVisualization (e.g. d3.stack(), d3.pie(), etc.). The next step is to figure out how that visualization format requires your data to be organizaed to output correctly along with any additional attributes specific to that layout. It is important to note that we are returning to our original d3 alogorithm instead of using the method for a path where data and enter are not used.
+    </div>
+    <div id="commonAlgorithm">
+        The general common algorithm for creating these layouts is:
+        <pre>
+        svg.selectAll("line")
+        .data(dataset.edges)
+        .enter()
+        .append("line")
+        .style("stroke","#ccc")
+        .style("stroke-width",1);
+        </pre>
+    </div>
+</body>
+
+
+</html>
